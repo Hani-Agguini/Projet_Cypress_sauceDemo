@@ -15,7 +15,8 @@ pipeline {
             steps {
                 sh '''
                         npm install
-                        chmod +x node_modules/cypress/bin/cypress
+                        npm install cypress --save-dev
+
                         npx cypress --version
                     '''
             }
