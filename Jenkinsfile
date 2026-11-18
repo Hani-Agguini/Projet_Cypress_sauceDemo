@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'cypress/base'
+            image 'cypress/included:latest'
             args '-u root --entrypoint='
         }
     }
