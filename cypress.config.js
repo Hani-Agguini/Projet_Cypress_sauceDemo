@@ -1,4 +1,5 @@
 const { defineConfig } = require("cypress");
+const { allureCypress } = require("allure-cypress/reporter")
 
 module.exports = defineConfig({
   
@@ -22,6 +23,11 @@ module.exports = defineConfig({
       // implement node event listeners here
       const { plugin: cypressGrepPlugin } = require("@cypress/grep/plugin")
       cypressGrepPlugin(config)
+      
+      //allure report
+      allureCypress(on, config, {
+        resultsDir: "./allure-results",
+      })
 
       return config
     },

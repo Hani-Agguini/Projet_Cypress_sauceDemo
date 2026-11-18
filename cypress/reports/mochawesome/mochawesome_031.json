@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-11-18T14:51:40.218Z",
+    "end": "2026-11-18T14:51:41.340Z",
+    "duration": 1122,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ba37adf5-7bf5-433a-9c0f-09c2605b6108",
+      "title": "",
+      "fullFile": "cypress\\e2e\\LoginPom.cy.js",
+      "file": "cypress\\e2e\\LoginPom.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f52afd17-a352-4886-bacd-2104e0bd2ce7",
+          "title": "Login sauce demo Pom",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login valide",
+              "fullTitle": "Login sauce demo Pom Login valide",
+              "timedOut": null,
+              "duration": 633,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Saisir user name\n_LoginPage.default.saisirUsername(\"standard_user\");\n// Saisir password\n_LoginPage.default.saisirPassword(\"secret_sauce\");\n// Click Login\n_LoginPage.default.clickLogin();\n//redirection\ncy.url().should(\"include\", \"/inventory.html\");",
+              "err": {},
+              "uuid": "fff7787a-12ba-4af9-9a33-b8caa8848b08",
+              "parentUUID": "f52afd17-a352-4886-bacd-2104e0bd2ce7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login invalide",
+              "fullTitle": "Login sauce demo Pom Login invalide",
+              "timedOut": null,
+              "duration": 415,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Saisir user name\n_LoginPage.default.saisirUsername(\"standard_hani\");\n// Saisir password\n_LoginPage.default.saisirPassword(\"secret_sauce\");\n// Click Login\n_LoginPage.default.clickLogin();\n//redirection\n_LoginPage.default.getmsgerror().should(\"be.visible\").and(\"contain\", \"Epic sadface\");",
+              "err": {},
+              "uuid": "26c56a4d-8871-4924-8d47-0b33fcebd25d",
+              "parentUUID": "f52afd17-a352-4886-bacd-2104e0bd2ce7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fff7787a-12ba-4af9-9a33-b8caa8848b08",
+            "26c56a4d-8871-4924-8d47-0b33fcebd25d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1048,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "8.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

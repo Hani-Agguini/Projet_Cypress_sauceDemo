@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-11-18T14:51:12.737Z",
+    "end": "2026-11-18T14:51:13.548Z",
+    "duration": 811,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "35f87c0a-131b-40f1-acd3-c6ea2c9ec88b",
+      "title": "",
+      "fullFile": "cypress\\e2e\\LoginEnv.cy.js",
+      "file": "cypress\\e2e\\LoginEnv.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e68c3a46-5fb7-4252-9472-37d190303e1e",
+          "title": "Login Env sauce demo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login valide",
+              "fullTitle": "Login Env sauce demo Login valide",
+              "timedOut": null,
+              "duration": 720,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Saisir user name\ncy.get('#user-name').type(\"standard_user\");\n// Saisir password\ncy.get('#password').type(\"secret_sauce\");\n// Click Login\ncy.get('#login-button').click();\n//redirection\ncy.url().should(\"include\", \"/inventory.html\");",
+              "err": {},
+              "uuid": "ff453f52-332a-413a-bc2d-744f68c76b7b",
+              "parentUUID": "e68c3a46-5fb7-4252-9472-37d190303e1e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ff453f52-332a-413a-bc2d-744f68c76b7b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 720,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "8.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

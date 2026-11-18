@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-11-18T14:51:43.468Z",
+    "end": "2026-11-18T14:51:44.825Z",
+    "duration": 1357,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "13a694e9-bac7-4f72-b477-e44c10696b85",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Shopping.cy.js",
+      "file": "cypress\\e2e\\Shopping.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "50463f92-51c8-4172-a2f1-dd32db96f3d6",
+          "title": "E2E shopping",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "add products ....",
+              "fullTitle": "E2E shopping add products ....",
+              "timedOut": null,
+              "duration": 1302,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//redirection\ncy.url().should(\"include\", \"/inventory.html\");\n// ajout de back pack\n_InventoryPage.default.clickAddBackpack();\n// vérification visibilité du button remove \n_InventoryPage.default.verifremoveBackpack().should(\"be.visible\");\n// vérification numéro affiché dans le cart \n_InventoryPage.default.getNbpanier().should(\"have.text\", \"1\");\n_InventoryPage.default.clickClickpanier();\ncy.url().should(\"include\", \"/cart.html\");\n_CartPage.default.getCartList().should(\"contain\", \"Sauce Labs Backpack\");\n_CartPage.default.clickContunieShopping();\ncy.url().should(\"include\", \"/inventory.html\");\n_InventoryPage.default.clickAddBikelight();\n// vérification visibilité du button remove \n_InventoryPage.default.verifremoveBikelight().should(\"have.text\", \"Remove\");\n_InventoryPage.default.getNbpanier().should(\"contain\", \"2\");\n_InventoryPage.default.clickClickpanier();\ncy.url().should(\"include\", \"/cart.html\");\n_CartPage.default.getCartList().should(\"contain\", \"Sauce Labs Bike Light\");\n_CartPage.default.getCartList().get(\"[data-test='inventory-item']\").eq(0).should(\"contain\", \"Sauce Labs Backpack\");\n_CartPage.default.removeproduit();\n_CartPage.default.getCartList().should(\"not.have.text\", \"Sauce Labs Backpack\");\n_CartPage.default.getNbpanier().should(\"contain\", \"1\");\n_CartPage.default.clickCheckout();\ncy.url().should(\"include\", \"/checkout-step-one.html\");",
+              "err": {},
+              "uuid": "1a5eb6bd-938c-49ea-81de-d0916c61f22e",
+              "parentUUID": "50463f92-51c8-4172-a2f1-dd32db96f3d6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1a5eb6bd-938c-49ea-81de-d0916c61f22e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1302,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "8.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

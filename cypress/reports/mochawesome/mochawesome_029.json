@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-11-18T14:51:30.001Z",
+    "end": "2026-11-18T14:51:32.848Z",
+    "duration": 2847,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e15b06a4-03bf-4e71-9189-b89f4e412709",
+      "title": "",
+      "fullFile": "cypress\\e2e\\LoginJddJson.cy.js",
+      "file": "cypress\\e2e\\LoginJddJson.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0edb7da8-6c9d-48c5-9a70-402de14f4eed",
+          "title": "login widh jdd json",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "login with jdd fixtures",
+              "fullTitle": "login widh jdd json login with jdd fixtures",
+              "timedOut": null,
+              "duration": 2795,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"jdd.json\").then(data => {\n  data.forEach(user => {\n    cy.visit(\"https://www.saucedemo.com/\");\n    // Saisir user name\n    cy.get('#user-name').type(user.username);\n    // Saisir password\n    cy.get('#password').type(user.password);\n    // Click Login\n    cy.get('#login-button').click();\n    switch (user.result) {\n      case \"success\":\n        cy.url().should(\"include\", \"/inventory.html\");\n        break;\n      default:\n        cy.get(\"[data-test='error']\").should(\"be.visible\").and(\"contain\", \"Epic sadface\");\n    }\n  });\n});",
+              "err": {},
+              "uuid": "bbdaee94-5837-44f8-9982-6b24266e1c9d",
+              "parentUUID": "0edb7da8-6c9d-48c5-9a70-402de14f4eed",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bbdaee94-5837-44f8-9982-6b24266e1c9d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2795,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "8.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
