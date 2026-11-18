@@ -4,12 +4,15 @@ describe("Login sauce demo",()=>{
 
     beforeEach("set-up",()=>{
         // Aller vers url
-        cy.visit('https://www.saucedemo.com/')}
+        cy.visit('https://www.saucedemo.com/')
+        }
     )
     afterEach("teardown",function(){
         if(this.currentTest.state==="failed"){
             cy.screenshot(`failure-${this.currentTest.title}`)
         }
+        cy.teardown()
+        
     })
 
     it('Login valide',{tags:"@smoke"}, () => {
@@ -20,6 +23,13 @@ describe("Login sauce demo",()=>{
         cy.get('#password').type("secret_sauce");
         // Click Login
         cy.get('#login-button').click();
+        //redirection
+        cy.url().should("include","/inventory.html")
+        
+    });
+     it('Login valide with custom commands',{tags:"@custom_commands"}, () => {
+        // cy.connexion("standard_user","secret_sauce")
+        cy.connexion_pom("standard_user","secret_sauce")
         //redirection
         cy.url().should("include","/inventory.html")
         
@@ -39,5 +49,5 @@ describe("Login sauce demo",()=>{
     });
 
 
-
+    
 })

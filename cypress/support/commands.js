@@ -1,3 +1,4 @@
+import LoginPage from "../pages/LoginPage";
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -23,3 +24,25 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+// fonction personnaliser pour faire le parcourt login 
+
+Cypress.Commands.add('connexion',(username,password)=>{
+
+    cy.get('#user-name').type(username);
+
+    cy.get('#password').type(password);
+
+    cy.get('#login-button').click();
+})
+Cypress.Commands.add('teardown',()=>{
+
+    cy.clearAllCookies()
+    cy.getAllLocalStorage()
+    sessionStorage.clear()
+})
+Cypress.Commands.add('connexion_pom',(username,password)=>{
+
+    LoginPage.loginApp(username,password)
+
+})

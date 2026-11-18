@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 3,
+    "failures": 0,
+    "start": "2026-11-18T15:12:58.554Z",
+    "end": "2026-11-18T15:12:58.671Z",
+    "duration": 117,
+    "testsRegistered": 3,
+    "passPercent": null,
+    "pendingPercent": 100,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f42c6b97-c503-4aa1-9524-9861f7a3d5c4",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Login.cy.js",
+      "file": "cypress\\e2e\\Login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2a427fe6-175e-4667-89a8-cd33b318ec60",
+          "title": "Login sauce demo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login valide",
+              "fullTitle": "Login sauce demo Login valide",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "// Saisir user name\ncy.get('#user-name').type(\"standard_user\");\n// Saisir password\ncy.get('#password').type(\"secret_sauce\");\n// Click Login\ncy.get('#login-button').click();\n//redirection\ncy.url().should(\"include\", \"/inventory.html\");",
+              "err": {},
+              "uuid": "5ae02494-2631-4708-b012-840ad3c12470",
+              "parentUUID": "2a427fe6-175e-4667-89a8-cd33b318ec60",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login valide with custom commands",
+              "fullTitle": "Login sauce demo Login valide with custom commands",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.connexion(\"standard_user\", \"secret_sauce\");\n//redirection\ncy.url().should(\"include\", \"/inventory.html\");",
+              "err": {},
+              "uuid": "be2c9f31-c117-494f-b6d6-25a07ec6e2d2",
+              "parentUUID": "2a427fe6-175e-4667-89a8-cd33b318ec60",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login invalide",
+              "fullTitle": "Login sauce demo Login invalide",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.get('#user-name').type(\"standard_user_hani\");\ncy.get('#password').type(\"standard_user_hani\");\ncy.get('#login-button').click();\n//cy.getByRole(\"alert\").should('contain',\"Epic sadface\")\ncy.get(\"[data-test='error']\").should(\"be.visible\").and(\"contain\", \"Epic sadface\");",
+              "err": {},
+              "uuid": "4f37b0db-eae3-4129-acf7-356137037f96",
+              "parentUUID": "2a427fe6-175e-4667-89a8-cd33b318ec60",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [
+            "5ae02494-2631-4708-b012-840ad3c12470",
+            "be2c9f31-c117-494f-b6d6-25a07ec6e2d2",
+            "4f37b0db-eae3-4129-acf7-356137037f96"
+          ],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "8.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

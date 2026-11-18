@@ -13,8 +13,11 @@ pipeline {
         }
         stage('install dep') {
             steps {
-                sh 'npm install'
-                sh 'npx cypress --version'
+                sh '''
+                        npm install
+                        chmod +x node_modules/cypress/bin/cypress
+                        npx cypress --version
+                    '''
             }
         }
         stage('Lancer le test') {
