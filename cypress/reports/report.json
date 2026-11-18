@@ -1,0 +1,472 @@
+{
+  "stats": {
+    "suites": 7,
+    "tests": 8,
+    "passes": 8,
+    "pending": 0,
+    "failures": 0,
+    "testsRegistered": 8,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2026-11-17T15:20:47.203Z",
+    "end": "2026-11-17T15:21:13.062Z",
+    "duration": 25859
+  },
+  "results": [
+    {
+      "uuid": "6824465e-3394-4839-8b9c-74dd8ee15bd0",
+      "title": "",
+      "fullFile": "cypress\\e2e\\LoginEnv.cy.js",
+      "file": "cypress\\e2e\\LoginEnv.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bdce9e3e-05b8-482e-88c8-a5079b9fb2e4",
+          "title": "Login Env sauce demo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login valide",
+              "fullTitle": "Login Env sauce demo Login valide",
+              "timedOut": null,
+              "duration": 633,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Saisir user name\ncy.get('#user-name').type(\"standard_user\");\n// Saisir password\ncy.get('#password').type(\"secret_sauce\");\n// Click Login\ncy.get('#login-button').click();\n//redirection\ncy.url().should(\"include\", \"/inventory.html\");",
+              "err": {},
+              "uuid": "8f5527a8-b93b-42ae-a465-7548bf8c8b2e",
+              "parentUUID": "bdce9e3e-05b8-482e-88c8-a5079b9fb2e4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8f5527a8-b93b-42ae-a465-7548bf8c8b2e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 633,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "20533037-8a84-455d-92c9-56fff0c671e9",
+      "title": "",
+      "fullFile": "cypress\\e2e\\LoginEnvFile.cy.js",
+      "file": "cypress\\e2e\\LoginEnvFile.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7285410f-7c94-4a38-b453-bb029e7b8232",
+          "title": "Login Env sauce demo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login valide",
+              "fullTitle": "Login Env sauce demo Login valide",
+              "timedOut": null,
+              "duration": 629,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Saisir user name\ncy.get('#user-name').type(\"standard_user\");\n// Saisir password\ncy.get('#password').type(\"secret_sauce\");\n// Click Login\ncy.get('#login-button').click();\n//redirection\ncy.url().should(\"include\", \"/inventory.html\");",
+              "err": {},
+              "uuid": "d594c80a-46ba-432d-9474-d4a4d28a6dd9",
+              "parentUUID": "7285410f-7c94-4a38-b453-bb029e7b8232",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d594c80a-46ba-432d-9474-d4a4d28a6dd9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 629,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "ab5d720c-2796-4ddd-8e58-7a22a824ca78",
+      "title": "",
+      "fullFile": "cypress\\e2e\\LoginJddCsv.cy.js",
+      "file": "cypress\\e2e\\LoginJddCsv.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "119f3659-6931-4073-bbfe-5cefea5dfd5c",
+          "title": "login widh jdd csv",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "login with jdd fixtures",
+              "fullTitle": "login widh jdd csv login with jdd fixtures",
+              "timedOut": null,
+              "duration": 92,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.readFile(\"cypress/fixtures/jdd.csv\").then(csvData => {\n  (0, _csvtojson.default)().fromString(csvData).then(users => {\n    users.forEach(user => {\n      cy.visit(\"https://www.saucedemo.com/\");\n      // Saisir user name\n      cy.get('#user-name').type(user.username);\n      // Saisir password\n      cy.get('#password').type(user.password);\n      // Click Login\n      cy.get('#login-button').click();\n      switch (user.result) {\n        case \"success\":\n          cy.url().should(\"include\", \"/inventory.html\");\n          break;\n        default:\n          cy.get(\"[data-test='error']\").should(\"be.visible\").and(\"contain\", \"Epic sadface\");\n      }\n    });\n  });\n});",
+              "err": {},
+              "uuid": "d1b6a3e0-f16b-4eb7-966b-82e777b68868",
+              "parentUUID": "119f3659-6931-4073-bbfe-5cefea5dfd5c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d1b6a3e0-f16b-4eb7-966b-82e777b68868"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 92,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "798c99b4-2fde-4982-b30d-cc2ed7980706",
+      "title": "",
+      "fullFile": "cypress\\e2e\\LoginJddCsvPapaparse.cy.js",
+      "file": "cypress\\e2e\\LoginJddCsvPapaparse.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "58882f50-794c-4e8e-895c-af48b75aced6",
+          "title": "login widh jdd csv avec Papaparse",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "login with jdd fixtures",
+              "fullTitle": "login widh jdd csv avec Papaparse login with jdd fixtures",
+              "timedOut": null,
+              "duration": 3332,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.readFile(\"cypress/fixtures/jdd.csv\").then(csvData => {\n  const users = _papaparse.default.parse(csvData, {\n    header: true,\n    skipEmptyLines: true\n  }).data;\n  users.forEach(user => {\n    cy.visit(\"https://www.saucedemo.com/\");\n    // Saisir user name\n    cy.get('#user-name').type(user.username);\n    // Saisir password\n    cy.get('#password').type(user.password);\n    // Click Login\n    cy.get('#login-button').click();\n    switch (user.result) {\n      case \"success\":\n        cy.url().should(\"include\", \"/inventory.html\");\n        break;\n      default:\n        cy.get(\"[data-test='error']\").should(\"be.visible\").and(\"contain\", \"Epic sadface\");\n    }\n  });\n});",
+              "err": {},
+              "uuid": "a3ac447d-aee1-419b-a3c7-604cfb0d1b2e",
+              "parentUUID": "58882f50-794c-4e8e-895c-af48b75aced6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a3ac447d-aee1-419b-a3c7-604cfb0d1b2e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3332,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "7dee39e2-9cf4-4c18-b178-559741eb34ae",
+      "title": "",
+      "fullFile": "cypress\\e2e\\LoginJddJson.cy.js",
+      "file": "cypress\\e2e\\LoginJddJson.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a888f45e-ee91-4832-bd6f-a09692f72728",
+          "title": "login widh jdd json",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "login with jdd fixtures",
+              "fullTitle": "login widh jdd json login with jdd fixtures",
+              "timedOut": null,
+              "duration": 2826,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"jdd.json\").then(data => {\n  data.forEach(user => {\n    cy.visit(\"https://www.saucedemo.com/\");\n    // Saisir user name\n    cy.get('#user-name').type(user.username);\n    // Saisir password\n    cy.get('#password').type(user.password);\n    // Click Login\n    cy.get('#login-button').click();\n    switch (user.result) {\n      case \"success\":\n        cy.url().should(\"include\", \"/inventory.html\");\n        break;\n      default:\n        cy.get(\"[data-test='error']\").should(\"be.visible\").and(\"contain\", \"Epic sadface\");\n    }\n  });\n});",
+              "err": {},
+              "uuid": "c7c72618-cda3-4407-b30e-b627e113a959",
+              "parentUUID": "a888f45e-ee91-4832-bd6f-a09692f72728",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c7c72618-cda3-4407-b30e-b627e113a959"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2826,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "2fd9d815-798c-4bbc-8e59-794ce3679596",
+      "title": "",
+      "fullFile": "cypress\\e2e\\LoginJddWrap.cy.js",
+      "file": "cypress\\e2e\\LoginJddWrap.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5d14b3db-35c4-4100-87ab-c6ee89c864b4",
+          "title": "login widh jdd json",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "login with jdd fixtures",
+              "fullTitle": "login widh jdd json login with jdd fixtures",
+              "timedOut": null,
+              "duration": 2804,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"jdd.json\").then(data => {\n  cy.wrap(data).each(user => {\n    cy.visit(\"https://www.saucedemo.com/\");\n    // Saisir user name\n    cy.get('#user-name').type(user.username);\n    // Saisir password\n    cy.get('#password').type(user.password);\n    // Click Login\n    cy.get('#login-button').click();\n    switch (user.result) {\n      case \"success\":\n        cy.url().should(\"include\", \"/inventory.html\");\n        break;\n      default:\n        cy.get(\"[data-test='error']\").should(\"be.visible\").and(\"contain\", \"Epic sadface\");\n    }\n  });\n});",
+              "err": {},
+              "uuid": "a0398e58-6583-4b81-87df-c66b98714ea7",
+              "parentUUID": "5d14b3db-35c4-4100-87ab-c6ee89c864b4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a0398e58-6583-4b81-87df-c66b98714ea7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2804,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "ce210ea9-45cb-44fa-8e23-2cb8eb30c1a7",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Login.cy.js",
+      "file": "cypress\\e2e\\Login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fc4ccb69-d923-4e92-b796-f6f45e5e39e3",
+          "title": "Login sauce demo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login valide",
+              "fullTitle": "Login sauce demo Login valide",
+              "timedOut": null,
+              "duration": 1091,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Saisir user name\ncy.get('#user-name').type(\"standard_user\");\n// Saisir password\ncy.get('#password').type(\"secret_sauce\");\n// Click Login\ncy.get('#login-button').click();\n//redirection\ncy.url().should(\"include\", \"/inventory.html\");",
+              "err": {},
+              "uuid": "0007b100-491b-4706-ba47-35350d654ce9",
+              "parentUUID": "fc4ccb69-d923-4e92-b796-f6f45e5e39e3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login invalide",
+              "fullTitle": "Login sauce demo Login invalide",
+              "timedOut": null,
+              "duration": 459,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#user-name').type(\"standard_user_hani\");\ncy.get('#password').type(\"standard_user_hani\");\ncy.get('#login-button').click();\n//cy.getByRole(\"alert\").should('contain',\"Epic sadface\")\ncy.get(\"[data-test='error']\").should(\"be.visible\").and(\"contain\", \"Epic sadface\");",
+              "err": {},
+              "uuid": "050079bf-2bf5-4e65-ac62-bee47039def4",
+              "parentUUID": "fc4ccb69-d923-4e92-b796-f6f45e5e39e3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0007b100-491b-4706-ba47-35350d654ce9",
+            "050079bf-2bf5-4e65-ac62-bee47039def4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1550,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "8.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

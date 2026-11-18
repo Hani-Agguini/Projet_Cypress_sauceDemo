@@ -1,0 +1,33 @@
+[
+    {
+        "username":"standard_user",
+        "password" :"secret_sauce",
+        "result" : "success"
+    },
+    {
+        "username":"standard_hani",
+        "password" :"secret_sauce",
+        "result" : "failed"
+    },
+    {
+        "username":"problem_user",
+        "password" :"secret_sauce",
+        "result" : "success"
+    },
+    {
+        "username":"locked_out_user",
+        "password" :"secret_sauce",
+        "result" : "failed"
+    },
+    {
+        "username":"visual_user",
+        "password" :"secret_sauce",
+        "result" : "success"
+    },
+    {
+        "username":"invalide",
+        "password" :"secret_sauce",
+        "result" : "failed"
+    }
+
+]
