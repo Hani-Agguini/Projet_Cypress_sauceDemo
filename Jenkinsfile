@@ -14,6 +14,7 @@ pipeline {
         stage('install dep') {
             steps {
                 sh 'npm install'
+                sh 'npx cypress --version'
             }
         }
         stage('Lancer le test') {
